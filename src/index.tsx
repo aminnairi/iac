@@ -60,4 +60,6 @@ const view = ({ ip }, { fetchIpInformations }) => (
   </div>
 )
 
+console.log('henlo fren')
+
 window.addEventListener('load', () => app(state, actions, view, document.body))
