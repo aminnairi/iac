@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "lib": [
+      "es2017",
+      "dom"
+    ]
   }
 }
