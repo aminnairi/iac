@@ -4,17 +4,19 @@ import M from 'materialize-css'
 import { app, h } from 'hyperapp'
 
 const state = {
-  ip: '8.8.8.8'
+  ip: '8.8.8.8',
+  informations: {}
 }
 
 const actions = {
-  fetchIpInformations: event => {
+  setInformations: (informations) => ({ informations }),
+  fetchInformations: event => (state, actions) => {
     event.preventDefault()
-    fetch('https://ipapi.co/json/').then(response => response.json()).then(console.log).catch(error => M.toast({ html: error, classes: 'red' }))
+    fetch('https://ipapi.co/json/', { mode: 'cors' }).then(response => response.json()).then(actions.setInformations).catch(error => M.toast({ html: error, classes: 'red' }))
   }
 }
 
-const view = ({ ip }, { fetchIpInformations }) => (
+const view = ({ ip, informations }, { fetchInformations }) => (
   <div>
     <header>
       <nav class='blue darken-3'>
@@ -42,7 +44,7 @@ const view = ({ ip }, { fetchIpInformations }) => (
           </div>
         </div>
 
-        <form onsubmit={fetchIpInformations}>
+        <form onsubmit={fetchInformations}>
           <div class='row'>
             <div class='col s12'>
               <input value={ip} />
@@ -55,6 +57,16 @@ const view = ({ ip }, { fetchIpInformations }) => (
             </div>
           </div>
         </form>
+
+        <div class='row'>
+          <div class='row'>
+            <table>
+              <tbody>
+                {Object.entries(informations).map(([ key, value ]) => <tr><td>{key}</td><td>{value}</td></tr>)}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </main>
   </div>
