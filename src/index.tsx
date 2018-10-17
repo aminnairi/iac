@@ -25,6 +25,10 @@ const view = ({ ip }, { fetchIpInformations }) => (
             <li>
               <a href='https://ipapi.co/' target='blank'>IP API</a>
             </li>
+
+            <li>
+              <a href='https://github.com/aminnairi/iac/' target='blank'>GitHub</a>
+            </li>
           </ul>
         </div>
       </nav>
