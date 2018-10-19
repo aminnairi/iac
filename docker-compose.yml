@@ -1,8 +1,9 @@
 app:
   image: node:10.0.0
-  ports:
-    - 8080:8080
+  user: 1000:1000
   working_dir: /app
   stdin_open: true
+  ports:
+    - 8080:8080
   volumes:
     - ./:/app
