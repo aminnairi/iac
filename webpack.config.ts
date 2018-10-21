@@ -48,6 +48,7 @@ export default ({ production, development }: Environment): webpack.Configuration
     new Html({
       template: resolve('src', 'index.html'),
       inject: 'head',
+
       minify: {
         caseSensitive: false,
         collapseBooleanAttributes: production,
@@ -84,8 +85,12 @@ export default ({ production, development }: Environment): webpack.Configuration
 
   devServer: {
     contentBase: resolve('public'),
+    watchContentBase: true,
     overlay: true,
     host: '0.0.0.0',
-    port: 8080
+    port: 8080,
+    compress: true,
+    historyApiFallback: true,
+    inline: true
   }
 })
