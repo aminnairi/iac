@@ -13,3 +13,11 @@ IP API Client
 ## License
 
 [MIT License](./LICENSE)
+
+## Technologies used
+
+- [Hyperapp](https://github.com/hyperapp/hyperapp)
+- [Materialize](https://github.com/Dogfalo/materialize)
+- [Sass](https://github.com/sass/sass)
+- [TypeScript](https://github.com/Microsoft/TypeScript)
+- [Webpack](https://github.com/webpack/webpack)
