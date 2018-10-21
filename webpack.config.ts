@@ -13,6 +13,8 @@ interface Environment {
 export default ({ production, development }: Environment): webpack.Configuration => ({
   mode: production ? 'production' : 'development',
 
+  target: 'web',
+
   entry: {
     index: resolve('src', 'index.tsx'),
   },
