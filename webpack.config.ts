@@ -18,7 +18,8 @@ export default ({ production, development }: Environment): webpack.Configuration
   },
 
   output: {
-    filename: 'index.js',
+    filename: production ? '[chunkhash].js' : '[name].js',
+    chunkFilename: production ? '[chunkhash].js' : '[name].js',
     path: resolve('public')
   },
 
