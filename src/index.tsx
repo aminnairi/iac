@@ -107,8 +107,6 @@ const view = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
   </div>
 )
 
-console.log('henlo fren')
-
 window.addEventListener('load', () => {
   const googleIcons = document.createElement('link')
   googleIcons.rel = 'stylesheet'
