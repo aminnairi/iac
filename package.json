@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --env.production",
-    "start": "webpack-dev-server --env.development --hot"
+    "start": "webpack-dev-server --env.development --hot --color --progress"
   },
   "devDependencies": {
     "@types/node": "^10.12.0",
