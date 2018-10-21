@@ -2,7 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "webpack --env.production --progress",
+    "build": "webpack --env.production --progress --color",
     "start": "webpack-dev-server --env.development --hot --color --progress"
   },
   "devDependencies": {
