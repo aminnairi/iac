@@ -9,6 +9,10 @@
     "@types/connect" "*"
     "@types/node" "*"
 
+"@types/cash@*":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/cash/-/cash-0.0.3.tgz#770d6382c605bb4f8572f17cea6f40cec5832496"
+
 "@types/connect@*":
   version "3.4.32"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.32.tgz#aa0e9616b9435ccad02bc52b5b454ffc2c70ba28"
@@ -51,6 +55,19 @@
     "@types/events" "*"
     "@types/node" "*"
 
+"@types/jquery@*":
+  version "3.3.21"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.21.tgz#850a8411ccf86f86f0d418eee002697bf8da3c9a"
+  dependencies:
+    "@types/sizzle" "*"
+
+"@types/materialize-css@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-1.0.5.tgz#d472422b50fde7594d168f89c267dd1e2bbc5e5f"
+  dependencies:
+    "@types/cash" "*"
+    "@types/jquery" "*"
+
 "@types/mime@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.0.tgz#5a7306e367c539b9f6543499de8dd519fac37a8b"
@@ -69,6 +86,10 @@
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
 
 "@types/tapable@*":
   version "1.0.4"
