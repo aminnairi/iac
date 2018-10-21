@@ -42,6 +42,10 @@ const view = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
       <li>
         <a class='sidenav-close' href='https://github.com/aminnairi/iac/' target='blank'>GitHub</a>
       </li>
+
+      <li>
+        <a class='sidenav-close' href='https://github.com/aminnairi/iac/issues/' target='blank'>Bug</a>
+      </li>
     </ul>
 
     <header>
@@ -61,6 +65,10 @@ const view = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
 
               <li>
                 <a href='https://github.com/aminnairi/iac/' target='blank'>GitHub</a>
+              </li>
+
+              <li>
+                <a href='https://github.com/aminnairi/iac/issues/' target='blank'>Bug</a>
               </li>
             </ul>
           </div>
