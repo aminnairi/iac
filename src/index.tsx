@@ -18,7 +18,7 @@ const actions = {
   setIp: ({ target: { value } }) => ({ ip: value }),
   preventDefault: event => event.preventDefault(),
   notification: input => ({ toast }) =>  {
-    if (toast) {
+    if (toast && toast.timeRemaining > 0) {
       toast.dismiss()
     }
 
