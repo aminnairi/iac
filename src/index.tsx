@@ -109,4 +109,10 @@ const view = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
 
 console.log('henlo fren')
 
-window.addEventListener('load', () => app(state, actions, view, document.body))
+window.addEventListener('load', () => {
+  const googleIcons = document.createElement('link')
+  googleIcons.rel = 'stylesheet'
+  googleIcons.href = 'https://fonts.googleapis.com/icon?family=Material+Icons'
+  document.getElementsByTagName('head')[0].appendChild(googleIcons)
+  app(state, actions, view, document.body)
+})
