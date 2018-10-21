@@ -3,7 +3,7 @@ import { resolve } from 'path'
 import Html from 'html-webpack-plugin'
 import Clean from 'clean-webpack-plugin'
 
-const plug = (...plugins) => plugins.filter(plugin => plugin)
+const plug = (...plugins: any[]): any[] => plugins.filter(plugin => plugin)
 
 interface Environment {
   production: boolean,
