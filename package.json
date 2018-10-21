@@ -1,5 +1,6 @@
 {
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "webpack --env.production",
     "start": "webpack-dev-server --env.development --hot --color --progress"
