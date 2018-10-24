@@ -118,7 +118,7 @@ const view = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
 
 window.addEventListener('load', () => {
   if ('serviceWorker' in navigator) {
-    runtime.register()
+    // runtime.register()
   }
 
   const googleIcons = document.createElement('link')
