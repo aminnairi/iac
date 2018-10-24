@@ -11,3 +11,13 @@ services:
       - 8080:8080
     volumes:
       - ./:/app
+
+  build:
+    image: node:10.0.0
+    user: 1000:1000
+    working_dir: /app
+    command: yarn build
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app
