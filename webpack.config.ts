@@ -2,6 +2,8 @@ import webpack from 'webpack'
 import { resolve } from 'path'
 import Html from 'html-webpack-plugin'
 import Clean from 'clean-webpack-plugin'
+import Manifest from 'webpack-pwa-manifest'
+import ServiceWorker from 'serviceworker-webpack-plugin'
 
 const plug = (...plugins: any[]): any[] => plugins.filter(plugin => plugin)
 
@@ -80,6 +82,23 @@ export default ({ production, development }: Environment): webpack.Configuration
         trimCustomFragments: false,
         useShortDoctype: false
       }
+    }),
+
+    new Manifest({
+      filename: production ? '[hash].json' : 'manifest.json',
+      name: 'IP API Client',
+      short_name: 'IAC',
+      description: 'IP API Client',
+      background_color: '#fff',
+      theme_color: '#1565c0',
+      icons: [{
+        src: resolve('src', 'icon.png'),
+        sizes: [ 192, 512 ]
+      }]
+    }),
+
+    new ServiceWorker({
+      entry: resolve('src', 'serviceWorker.ts')
     })
   ),
 
