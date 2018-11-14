@@ -15,3 +15,7 @@ build: docker
 
 docker:
 	@$(DOCKERCOMPOSE) build
+
+publish: build
+  @git push origin $(git subtree split --prefix public master):gh-pages --force
+  rm -rf public
