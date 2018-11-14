@@ -1,7 +1,6 @@
 import './index.sass'
 
 import M from 'materialize-css'
-import runtime from 'serviceworker-webpack-plugin/lib/runtime'
 import { app, h } from 'hyperapp'
 
 const underscoreToSpace = input => input.replace(/_/g, ' ')
@@ -117,10 +116,6 @@ const view = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
 )
 
 window.addEventListener('load', () => {
-  if ('serviceWorker' in navigator) {
-    // runtime.register()
-  }
-
   const googleIcons = document.createElement('link')
   googleIcons.rel = 'stylesheet'
   googleIcons.href = 'https://fonts.googleapis.com/icon?family=Material+Icons'
