@@ -42,6 +42,14 @@ export default ({ production, development }: Environment): webpack.Configuration
     }]
   },
 
+  resolve: {
+    extensions: [
+      '.ts',
+      '.tsx',
+      '.js'
+    ]
+  },
+
   plugins: plug(
     production && new Clean([
       resolve('public')
