@@ -17,8 +17,4 @@ docker:
 	@$(DOCKERCOMPOSE) build
 
 publish: build
-	@git add .
-	@git commit -am ":package: production build"
-	@git push origin $(git subtree split --prefix public master):gh-pages --force
-	@git reset HEAD~1
-	@rm -rf public
+	@git add . && git commit -am ":package: production build" && git push origin $(git subtree split --prefix public master):gh-pages --force && git reset HEAD~1 && rm -rf public
