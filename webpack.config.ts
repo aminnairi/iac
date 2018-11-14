@@ -4,6 +4,7 @@ import Html from 'html-webpack-plugin'
 import Clean from 'clean-webpack-plugin'
 import Manifest from 'webpack-pwa-manifest'
 import ServiceWorker from 'serviceworker-webpack-plugin'
+import Favicons from 'favicons-webpack-plugin'
 
 const plug = (...plugins: any[]): any[] => plugins.filter(plugin => plugin)
 
@@ -103,6 +104,33 @@ export default ({ production, development }: Environment): webpack.Configuration
         src: resolve('src', 'icon.png'),
         sizes: [ 192, 512 ]
       }]
+    }),
+
+    new Favicons({
+      // Your source logo
+      logo: resolve('src', 'icon.png'),
+      // The prefix for all image files (might be a folder or a name)
+      prefix: '[hash]',
+      // Emit all stats of the generated icons
+      emitStats: false,
+      // Generate a cache file with control hashes and
+      // don't rebuild the favicons until those hashes change
+      persistentCache: false,
+      // Inject the html into the html-webpack-plugin
+      inject: true,
+      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+      icons: {
+        android: false,
+        appleIcon: false,
+        appleStartup: false,
+        coast: false,
+        favicons: true,
+        firefox: false,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
     }),
 
     new ServiceWorker({
