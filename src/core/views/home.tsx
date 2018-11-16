@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
 import { underscoreToSpace, capitalize } from '../../utils'
 
-const home = ({ ip, informations }, { fetchInformations, setIp, preventDefault, createHandler }) => (
+const home = ({ ip, informations, theme, textTheme }, { fetchInformations, setIp, preventDefault, createHandler }) => (
   <div oncreate={createHandler}>
     <ul class='sidenav' id='mobile'>
       <li>
@@ -19,25 +19,25 @@ const home = ({ ip, informations }, { fetchInformations, setIp, preventDefault, 
 
     <header>
       <div class='navbar-fixed'>
-        <nav class='blue darken-3'>
+        <nav class={ theme } style='transition: all .25s;'>
           <div class='nav-wrapper container'>
-            <a href='' class='brand-logo'>IP API Client</a>
+            <a href='' class={ `brand-logo ${ textTheme }` }>IP API Client</a>
 
-            <a href='#!' onclick={preventDefault} class='sidenav-trigger' data-target='mobile'>
+            <a href='#!' onclick={ preventDefault } class={ `sidenav-trigger ${ textTheme }` } data-target='mobile'>
               <i class='material-icons'>menu</i>
             </a>
 
             <ul class='right hide-on-med-and-down'>
               <li>
-                <a href='https://ipapi.co/' target='blank'>IP API</a>
+                <a href='https://ipapi.co/' class={ textTheme } target='blank'>IP API</a>
               </li>
 
               <li>
-                <a href='https://github.com/aminnairi/iac/' target='blank'>GitHub</a>
+                <a href='https://github.com/aminnairi/iac/' class={ textTheme } target='blank'>GitHub</a>
               </li>
 
               <li>
-                <a href='https://github.com/aminnairi/iac/issues/' target='blank'>Bug</a>
+                <a href='https://github.com/aminnairi/iac/issues/' class={ textTheme } target='blank'>Bug</a>
               </li>
             </ul>
           </div>
