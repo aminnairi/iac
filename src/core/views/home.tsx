@@ -19,7 +19,7 @@ const home = ({ ip, informations, theme, textTheme }, { fetchInformations, setIp
 
     <header>
       <div class='navbar-fixed'>
-        <nav class={ theme } style='transition: all .25s;'>
+        <nav class={ theme }>
           <div class='nav-wrapper container'>
             <a href='' class={ `brand-logo ${ textTheme }` }>IP API Client</a>
 
