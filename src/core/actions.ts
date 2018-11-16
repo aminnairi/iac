@@ -17,7 +17,9 @@ const actions = {
     event.preventDefault()
     actions.notification('Fetching your IP informations...') 
     fetch(`https://ipapi.co/${ip}/json/`, { mode: 'cors' }).then(response => response.json()).then(actions.setInformations).catch(error => M.toast({ html: error, classes: 'red' }))
-  }
+  },
+  setBlueNavigationBar: () => ({ theme: 'blue darken-3', textTheme: 'white-text' }),
+  setWhiteNavigationBar: () => ({ theme: 'white', textTheme: 'blue-text text-darken-3' }),
 }
 
 export { actions }
