@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
   const main = app(state, actions, home, document.body)
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 64) {
+    if (window.scrollY > 39.2) {
       // @ts-ignore
       main.setBlueNavigationBar()
     } else {
