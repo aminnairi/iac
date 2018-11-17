@@ -1,7 +1,7 @@
 import { h } from 'hyperapp'
 import { underscoreToSpace, capitalize } from '../../utils'
 
-const home = ({ ip, informations, theme, textTheme }, { fetchInformations, setIp, preventDefault, createHandler }) => (
+const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler }) => (
   <div oncreate={createHandler}>
     <ul class='sidenav' id='mobile'>
       <li>
@@ -65,7 +65,7 @@ const home = ({ ip, informations, theme, textTheme }, { fetchInformations, setIp
 
           <div class='row'>
             <div class='col s12 center'>
-              <button class='btn blue darken-3'>Search</button>
+              <button class={`btn blue darken-3 ${ fetching ? 'disabled' : '' }`}>Search</button>
             </div>
           </div>
         </form>
