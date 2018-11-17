@@ -1,4 +1,5 @@
 import { h } from 'hyperapp'
+import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
 
 const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler }) => (
@@ -73,9 +74,13 @@ const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformati
         <div class='row'>
           <div class='row'>
             <table>
-              <tbody>
-                {Object.entries(informations).map(([ key, value ]) => <tr><td class='blue-text text-darken-4'>{capitalize(underscoreToSpace(key))}</td><td>{typeof value === 'boolean' ? value.toString() : value}</td></tr>)}
-              </tbody>
+              <Enter css={{ opacity: '0', transform: 'translateX(100%)' }}>
+                <Exit css={{ opacity: '0', transform: 'translateX(-100%)' }}>
+                  <tbody key={informations.ip}>
+                    {Object.entries(informations).map(([ key, value ]) => <tr><td class='blue-text text-darken-4'>{capitalize(underscoreToSpace(key))}</td><td>{typeof value === 'boolean' ? value.toString() : value}</td></tr>)}
+                  </tbody>
+                </Exit>
+              </Enter>
             </table>
           </div>
         </div>
