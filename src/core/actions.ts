@@ -1,6 +1,6 @@
 import M from 'materialize-css'
 
-const actions = {
+export const actions = {
   createHandler: () => M.Sidenav.init(document.querySelectorAll('.sidenav'), {}),
   setInformations: (informations) => ({ informations }),
   setIp: ({ target: { value } }) => ({ ip: value }),
@@ -21,5 +21,3 @@ const actions = {
   setBlueNavigationBar: () => ({ theme: 'blue darken-3', textTheme: 'white-text' }),
   setWhiteNavigationBar: () => ({ theme: 'white', textTheme: 'blue-text text-darken-3' }),
 }
-
-export { actions }
