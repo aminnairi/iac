@@ -3,7 +3,7 @@ import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
 
 const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload }) => (
-  <div oncreate={createHandler}>
+  <div oncreate={createHandler} key='ipapiclient'>
     <ul class='sidenav' id='mobile'>
       <li>
         <a class='sidenav-close' href='https://ipapi.co/' target='blank'>IP API</a>
