@@ -6,18 +6,14 @@ export const actions = {
   setIp: ({ target: { value } }) => ({ ip: value.trim() }),
   preventDefault: event => event.preventDefault(),
   success: input => ({ toast }) =>  {
-    let timeBeforeNewNotification = 0
-
     if (toast && toast.timeRemaining > 0) {
-      timeBeforeNewNotification = toast.timeRemaining + 500
+      toast.dismiss()
     }
 
-    setTimeout(() => {
-      toast = M.toast({
-        html: `<i class='material-icons'>info</i> &nbsp;${ input }`,
-        classes: 'blue darken-3'
-      })
-    }, timeBeforeNewNotification)
+    toast = M.toast({
+      html: `<i class='material-icons'>info</i> &nbsp;${ input }`,
+      classes: 'blue darken-3'
+    })
 
     return { toast }
   },
