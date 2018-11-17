@@ -17,7 +17,7 @@ export const actions = {
 
     return { toast }
   },
-  error: (error = 'Unable to fetch IP Informations. Disable your adblocker or try again') => ({ toast }) => {
+  error: (error = 'Network not available or adblocker in use') => ({ toast }) => {
     if (toast && toast.timeRemaining > 0) {
       toast.dismiss()
     }
@@ -38,6 +38,17 @@ export const actions = {
 
     try {
       const response = await fetch(`https://ipapi.co/${ip}/json/`, { mode: 'cors' })
+
+      if (response.status === 400) {
+        throw 'Bad request'
+      } else if (response.status === 404) {
+        throw 'URL not found'
+      } else if (response.status === 405) {
+        throw 'Method not allowed'
+      } else if (response.status === 429) {
+        throw 'Too many requests'
+      }
+
       const json = await response.json()
 
       if (json.error) {
@@ -51,7 +62,7 @@ export const actions = {
 
       actions.fetched()
     } catch (e) {
-      actions.error()
+      actions.error(e)
     } finally {
       actions.fetched()
     }
