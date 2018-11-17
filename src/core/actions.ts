@@ -1,6 +1,7 @@
 import M from 'materialize-css'
 
 export const actions = {
+  emptyIp: () => ({ ip: '' }),
   goTopOrReload: event => {
     if (window.scrollY !== 0) {
       event.preventDefault()
