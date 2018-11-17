@@ -17,13 +17,13 @@ export const actions = {
 
     return { toast }
   },
-  error: () => ({ toast }) => {
+  error: (error = 'Unable to fetch IP Informations. Disable your adblocker or try again') => ({ toast }) => {
     if (toast && toast.timeRemaining > 0) {
       toast.dismiss()
     }
 
     toast = M.toast({
-      html: `<i class='material-icons'>warning</i> &nbsp;Unable to fetch IP informations. Disable your ad blocker or try again`,
+      html: `<i class='material-icons'>warning</i> &nbsp;${ error }`,
       classes: 'red darken-3'
     })
 
@@ -39,8 +39,17 @@ export const actions = {
     try {
       const response = await fetch(`https://ipapi.co/${ip}/json/`, { mode: 'cors' })
       const json = await response.json()
-      actions.setInformations(json)
-      actions.success('Successfully retrieved your IP informations')
+
+      if (json.error) {
+        actions.error(json.reason)
+      } else if (json.reserved) {
+        actions.error('Reserved IP adress')
+      } else {
+        actions.setInformations(json)
+        actions.success('Successfully retrieved your IP informations')
+      }
+
+      actions.fetched()
     } catch (e) {
       actions.error()
     } finally {
