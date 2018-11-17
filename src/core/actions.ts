@@ -3,7 +3,7 @@ import M from 'materialize-css'
 export const actions = {
   createHandler: () => M.Sidenav.init(document.querySelectorAll('.sidenav'), {}),
   setInformations: (informations) => ({ informations }),
-  setIp: ({ target: { value } }) => ({ ip: value }),
+  setIp: ({ target: { value } }) => ({ ip: value.trim() }),
   preventDefault: event => event.preventDefault(),
   notification: input => ({ toast }) =>  {
     if (toast && toast.timeRemaining > 0) {
