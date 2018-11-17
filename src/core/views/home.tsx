@@ -2,7 +2,7 @@ import { h } from 'hyperapp'
 import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
 
-const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler }) => (
+const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload }) => (
   <div oncreate={createHandler}>
     <ul class='sidenav' id='mobile'>
       <li>
@@ -22,7 +22,7 @@ const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformati
       <div class='navbar-fixed'>
         <nav class={ theme }>
           <div class='nav-wrapper container'>
-            <a href='' class={ `brand-logo ${ textTheme }` }>IP API Client</a>
+            <a href='' class={ `brand-logo ${ textTheme }` } onclick={ goTopOrReload }>IP API Client</a>
 
             <a href='#!' onclick={ preventDefault } class={ `sidenav-trigger ${ textTheme }` } data-target='mobile'>
               <i class='material-icons'>menu</i>
