@@ -3,5 +3,6 @@ export const state = {
   toast: undefined,
   informations: {},
   theme: 'white',
-  textTheme: 'blue-text text-darken-3'
+  textTheme: 'blue-text text-darken-3',
+  fetching: false
 }
