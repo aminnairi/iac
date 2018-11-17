@@ -1,6 +1,12 @@
 import M from 'materialize-css'
 
 export const actions = {
+  goTopOrReload: event => {
+    if (window.scrollY !== 0) {
+      event.preventDefault()
+      window.scroll({ top: 0, left: 0, behavior: 'smooth' })
+    }
+  },
   createHandler: () => M.Sidenav.init(document.querySelectorAll('.sidenav'), {}),
   setInformations: (informations) => ({ informations }),
   setIp: ({ target: { value } }) => ({ ip: value.trim().replace('?', '') }),
