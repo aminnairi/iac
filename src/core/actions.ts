@@ -59,8 +59,6 @@ export const actions = {
         actions.setInformations(json)
         actions.success('Successfully retrieved your IP informations')
       }
-
-      actions.fetched()
     } catch (e) {
       actions.error(e)
     } finally {
