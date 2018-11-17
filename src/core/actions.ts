@@ -33,8 +33,12 @@ export const actions = {
 
     return { toast }
   },
+
+  fetching: () => ({ fetching: true }),
+  fetched: () => ({ fetching: false }),
   fetchInformations: event => async ({ ip }, actions) => {
     event.preventDefault()
+    actions.fetching()
 
     try {
       const response = await fetch(`https://ipapi.co/${ip}/json/`, { mode: 'cors' })
@@ -43,8 +47,9 @@ export const actions = {
       actions.success('Successfully retrieved your IP informations')
     } catch (e) {
       actions.error()
+    } finally {
+      actions.fetched()
     }
-
   },
   setBlueNavigationBar: () => ({ theme: 'blue darken-3', textTheme: 'white-text' }),
   setWhiteNavigationBar: () => ({ theme: 'white', textTheme: 'blue-text text-darken-3' }),
