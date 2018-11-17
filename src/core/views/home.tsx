@@ -2,7 +2,7 @@ import { h } from 'hyperapp'
 import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
 
-const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload }) => (
+const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload, emptyIp }) => (
   <div oncreate={createHandler} key='ipapiclient'>
     <ul class='sidenav' id='mobile'>
       <li>
@@ -58,8 +58,9 @@ const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformati
           <div class='row'>
             <div class='col s12'>
               <div class='input-field'>
-                <label for='ip' class='active'>Leave empty to search current network</label>
+                <i class='material-icons prefix' onclick={ emptyIp }>close</i>
                 <input id='ip' value={ip} oninput={setIp} />
+                <label for='ip' class='active'>Empty for current network</label>
               </div>
             </div>
           </div>
