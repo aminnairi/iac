@@ -40,6 +40,16 @@ export default ({ production, development }: Environment): webpack.Configuration
         'css-loader',
         'sass-loader'
       ]
+    }, {
+      test: /\.ttf$/,
+      exclude: /node_modules/,
+      use: [{
+        loader: 'url-loader',
+        options: {
+          limit: 1,
+          name: production ? '[hash].[ext]' : 'fonts/roboto/[name].[ext]'
+        }
+      }]
     }]
   },
 
