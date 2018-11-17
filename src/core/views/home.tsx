@@ -74,7 +74,7 @@ const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformati
           <div class='row'>
             <table>
               <tbody>
-                {Object.entries(informations).map(([ key, value ]) => <tr><td>{capitalize(underscoreToSpace(key))}</td><td>{typeof value === 'boolean' ? value.toString() : value}</td></tr>)}
+                {Object.entries(informations).map(([ key, value ]) => <tr><td class='blue-text text-darken-4'>{capitalize(underscoreToSpace(key))}</td><td>{typeof value === 'boolean' ? value.toString() : value}</td></tr>)}
               </tbody>
             </table>
           </div>
