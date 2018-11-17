@@ -12,18 +12,6 @@ export const actions = {
   setInformations: (informations) => ({ informations }),
   setIp: ({ target: { value } }) => ({ ip: value.trim().replace('?', '') }),
   preventDefault: event => event.preventDefault(),
-  success: input => ({ toast }) =>  {
-    if (toast && toast.timeRemaining > 0) {
-      toast.dismiss()
-    }
-
-    toast = M.toast({
-      html: `<i class='material-icons'>info</i> &nbsp;${ input }`,
-      classes: 'blue darken-3'
-    })
-
-    return { toast }
-  },
   error: (error = 'Network not available or adblocker in use') => ({ toast }) => {
     if (toast && toast.timeRemaining > 0) {
       toast.dismiss()
@@ -64,7 +52,6 @@ export const actions = {
         actions.error('Reserved IP adress')
       } else {
         actions.setInformations(json)
-        actions.success('Successfully retrieved your IP informations')
       }
     } catch (e) {
       actions.error(e)
