@@ -5,6 +5,7 @@ import { goTopOrReload } from './goTopOrReload'
 import { createHandler } from './createHandler'
 import { setInformations } from './setInformations'
 import { setIp } from './setIp'
+import { preventDefault } from './preventDefault'
 
 export const actions = {
   emptyIp,
@@ -12,7 +13,7 @@ export const actions = {
   createHandler,
   setInformations,
   setIp,
-  preventDefault: event => event.preventDefault(),
+  preventDefault,
   error: (error = 'Network not available or adblocker in use') => ({ toast }) => {
     if (toast && toast.timeRemaining > 0) {
       toast.dismiss()
