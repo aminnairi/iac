@@ -1,11 +1,13 @@
 import M from 'materialize-css'
+
 import { emptyIp } from './emptyIp'
 import { goTopOrReload } from './goTopOrReload'
+import { createHandler } from './createHandler'
 
 export const actions = {
   emptyIp,
   goTopOrReload,
-  createHandler: () => M.Sidenav.init(document.querySelectorAll('.sidenav'), {}),
+  createHandler,
   setInformations: (informations) => ({ informations }),
   setIp: ({ target: { value } }) => ({ ip: value.trim().replace('?', '') }),
   preventDefault: event => event.preventDefault(),
