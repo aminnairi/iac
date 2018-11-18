@@ -59,7 +59,7 @@ export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchIn
             <div class='col s12 input-field'>
               <i class={ `material-icons prefix ${ textTheme }` } onlick={ emptyIp }>close</i>
               <input id='ip' type='text' value={ip} oninput={setIp} />
-              <label for='ip'>Empty for current network</label>
+              <label for='ip' class='active'>Empty for current network</label>
             </div>
           </div>
 
