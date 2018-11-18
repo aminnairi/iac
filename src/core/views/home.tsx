@@ -1,6 +1,7 @@
 import { h } from 'hyperapp'
 import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
+// @ts-ignore
 import { version } from '../../../package.json'
 
 export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload, emptyIp }) => (
