@@ -1,10 +1,14 @@
 import { h } from 'hyperapp'
 import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
+import { version } from '../../../package.json'
 
 export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload, emptyIp }) => (
-  <div oncreate={createHandler} key='ipapiclient'>
+  <div oncreate={createHandler}>
     <ul class='sidenav' id='mobile'>
+      <li class='center-align'>Version { version }</li>
+      <li class='divider'></li>
+
       <li>
         <a class='sidenav-close' href='https://ipapi.co/' target='blank'>IP API</a>
       </li>
