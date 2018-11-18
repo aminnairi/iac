@@ -6,6 +6,9 @@ import { createHandler } from './createHandler'
 import { setInformations } from './setInformations'
 import { setIp } from './setIp'
 import { preventDefault } from './preventDefault'
+import { error } from './error'
+import { fetching } from './fetching'
+import { fetched } from './fetched'
 
 export const actions = {
   emptyIp,
@@ -14,21 +17,9 @@ export const actions = {
   setInformations,
   setIp,
   preventDefault,
-  error: (error = 'Network not available or adblocker in use') => ({ toast }) => {
-    if (toast && toast.timeRemaining > 0) {
-      toast.dismiss()
-    }
-
-    toast = M.toast({
-      html: `<i class='material-icons'>warning</i> &nbsp;${ error }`,
-      classes: 'red darken-3'
-    })
-
-    return { toast }
-  },
-
-  fetching: () => ({ fetching: true }),
-  fetched: () => ({ fetching: false }),
+  error,
+  fetching,
+  fetched,
   fetchInformations: event => async ({ ip }, actions) => {
     event.preventDefault()
     actions.fetching()
