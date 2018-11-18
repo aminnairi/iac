@@ -56,12 +56,10 @@ export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchIn
 
         <form onsubmit={fetchInformations}>
           <div class='row'>
-            <div class='col s12'>
-              <div class='input-field'>
-                <i class='material-icons prefix' onclick={ emptyIp }>close</i>
-                <input id='ip' value={ip} oninput={setIp} />
-                <label for='ip' class='active'>Empty for current network</label>
-              </div>
+            <div class='col s12 input-field'>
+              <i class={ `material-icons prefix ${ textTheme }` } onlick={ emptyIp }>close</i>
+              <input id='ip' type='text' value={ip} oninput={setIp} />
+              <label for='ip'>Empty for current network</label>
             </div>
           </div>
 
