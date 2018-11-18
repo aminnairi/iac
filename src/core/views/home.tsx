@@ -27,10 +27,10 @@ export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchIn
       <div class='navbar-fixed'>
         <nav class={ theme }>
           <div class='nav-wrapper container'>
-            <a href='' class={ `brand-logo ${ textTheme }` } onclick={ goTopOrReload }>IP API Client</a>
+            <a key='unique' href='' class={ `brand-logo left ${ textTheme }` } onclick={ goTopOrReload }>IP API Client</a>
 
-            <a href='#!' onclick={ preventDefault } class={ `sidenav-trigger ${ textTheme }` } data-target='mobile'>
-              <i class='material-icons'>menu</i>
+            <a href='#!' onclick={ preventDefault } class={ `sidenav-trigger right ${ textTheme }` } data-target='mobile'>
+              <i class='material-icons'>more_vert</i>
             </a>
 
             <ul class='right hide-on-med-and-down'>
@@ -80,7 +80,7 @@ export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchIn
         <div class='row'>
           <div class='row'>
             <table>
-              <Enter css={{ opacity: '0', transform: 'translateX(100%)' }}>
+              <Enter css={{ opacity: '0', transform: 'translateY(100%)' }}>
                 <Exit css={{ opacity: '0', transform: 'translateX(-100%)' }}>
                   <tbody key={informations.ip}>
                     {Object.entries(informations).map(([ key, value ]) => <tr><td class='blue-text text-darken-4'>{capitalize(underscoreToSpace(key))}</td><td>{typeof value === 'boolean' ? value.toString() : value}</td></tr>)}
