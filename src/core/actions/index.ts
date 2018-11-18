@@ -3,12 +3,13 @@ import M from 'materialize-css'
 import { emptyIp } from './emptyIp'
 import { goTopOrReload } from './goTopOrReload'
 import { createHandler } from './createHandler'
+import { setInformations } from './setInformations'
 
 export const actions = {
   emptyIp,
   goTopOrReload,
   createHandler,
-  setInformations: (informations) => ({ informations }),
+  setInformations,
   setIp: ({ target: { value } }) => ({ ip: value.trim().replace('?', '') }),
   preventDefault: event => event.preventDefault(),
   error: (error = 'Network not available or adblocker in use') => ({ toast }) => {
