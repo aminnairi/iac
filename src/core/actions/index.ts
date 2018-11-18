@@ -51,7 +51,11 @@ export const actions = {
         actions.setInformations(json)
       }
     } catch (e) {
-      actions.error(e)
+      if (e instanceof TypeError) {
+        actions.error()
+      } else {
+        actions.error(e)
+      }
     } finally {
       actions.fetched()
     }
