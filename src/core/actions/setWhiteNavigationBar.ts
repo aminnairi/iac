@@ -1,0 +1,1 @@
+export const setWhiteNavigationBar = () => ({ theme: 'white', textTheme: 'blue-text text-darken-3' })

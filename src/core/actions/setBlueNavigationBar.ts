@@ -1,0 +1,1 @@
+export const setBlueNavigationBar = () => ({ theme: 'blue darken-3', textTheme: 'white-text' })
