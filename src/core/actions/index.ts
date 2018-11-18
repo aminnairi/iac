@@ -11,6 +11,7 @@ import { fetching } from './fetching'
 import { fetched } from './fetched'
 import { fetchInformations } from './fetchInformations'
 import { setBlueNavigationBar } from './setBlueNavigationBar'
+import { setWhiteNavigationBar } from './setWhiteNavigationBar'
 
 export const actions = {
   emptyIp,
@@ -24,5 +25,5 @@ export const actions = {
   fetched,
   fetchInformations,
   setBlueNavigationBar,
-  setWhiteNavigationBar: () => ({ theme: 'white', textTheme: 'blue-text text-darken-3' }),
+  setWhiteNavigationBar
 }
