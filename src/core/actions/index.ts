@@ -4,13 +4,14 @@ import { emptyIp } from './emptyIp'
 import { goTopOrReload } from './goTopOrReload'
 import { createHandler } from './createHandler'
 import { setInformations } from './setInformations'
+import { setIp } from './setIp'
 
 export const actions = {
   emptyIp,
   goTopOrReload,
   createHandler,
   setInformations,
-  setIp: ({ target: { value } }) => ({ ip: value.trim().replace('?', '') }),
+  setIp,
   preventDefault: event => event.preventDefault(),
   error: (error = 'Network not available or adblocker in use') => ({ toast }) => {
     if (toast && toast.timeRemaining > 0) {

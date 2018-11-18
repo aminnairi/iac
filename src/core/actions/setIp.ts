@@ -1,0 +1,1 @@
+export const setIp = ({ target: { value } }) => ({ ip: value.trim().replace('?', '') })
