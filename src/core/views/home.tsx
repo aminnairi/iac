@@ -2,7 +2,7 @@ import { h } from 'hyperapp'
 import { Enter, Exit } from '@hyperapp/transitions'
 import { underscoreToSpace, capitalize } from '../../utils'
 
-const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload, emptyIp }) => (
+export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload, emptyIp }) => (
   <div oncreate={createHandler} key='ipapiclient'>
     <ul class='sidenav' id='mobile'>
       <li>
@@ -89,5 +89,3 @@ const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformati
     </main>
   </div>
 )
-
-export { home }
