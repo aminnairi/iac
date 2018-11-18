@@ -7,7 +7,7 @@ import { version } from '../../../package.json'
 export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchInformations, setIp, preventDefault, createHandler, goTopOrReload, emptyIp }) => (
   <div oncreate={createHandler}>
     <ul class='sidenav' id='mobile'>
-      <li class='center-align'>Version { version }</li>
+      <li class='center-align'>v{ version }</li>
       <li class='divider'></li>
 
       <li>
