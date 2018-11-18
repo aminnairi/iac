@@ -1,0 +1,22 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.62ddb6af68671e5b00a51eb81adc4041.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.4638802530c70ddf489d23f7f01d7eeb.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "IP API Client",
+  "short_name": "IAC",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "IP API Client",
+  "background_color": "#fff",
+  "theme_color": "#1565c0"
+}

@@ -1,1 +1,0 @@
-export const underscoreToSpace = input => input.replace(/_/g, ' ')
