@@ -44,6 +44,8 @@ export const home = ({ ip, informations, theme, textTheme, fetching }, { fetchIn
               <li>
                 <a href='https://github.com/aminnairi/iac/issues/' class={ textTheme } target='blank'>Bug</a>
               </li>
+
+              <li class='grey-text'>v{ version }</li>
             </ul>
           </div>
         </nav>
